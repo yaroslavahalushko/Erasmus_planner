@@ -217,6 +217,56 @@ function addNote() {
   input.value = "";
 }
 
+function changeReminder() {
+  const reminders = [
+    "Upload your Learning Agreement before the faculty deadline.",
+    "Check if your passport and insurance are valid for the full semester.",
+    "Review the course list before submitting the final plan.",
+    "Confirm accommodation and save all booking details in your planner."
+  ];
+
+  const current = localStorage.getItem("dashboardReminder") || reminders[0];
+  let nextIndex = reminders.indexOf(current) + 1;
+
+  if (nextIndex >= reminders.length) {
+    nextIndex = 0;
+  }
+
+  localStorage.setItem("dashboardReminder", reminders[nextIndex]);
+
+  const reminderBox = document.getElementById("latestReminder");
+  if (reminderBox) {
+    reminderBox.textContent = reminders[nextIndex];
+  }
+}
+
+function togglePlannerDocuments() {
+  const current = localStorage.getItem("plannerDocumentsVisible");
+
+  const newValue = current === "hidden" ? "shown" : "hidden";
+  localStorage.setItem("plannerDocumentsVisible", newValue);
+
+  const docsBlock = document.getElementById("plannerDocuments");
+  if (docsBlock) {
+    docsBlock.style.display = newValue === "hidden" ? "none" : "block";
+  }
+}
+
+function applyPlannerSettings() {
+  const savedReminder = localStorage.getItem("dashboardReminder");
+  const docsVisibility = localStorage.getItem("plannerDocumentsVisible");
+
+  const reminderBox = document.getElementById("latestReminder");
+  if (reminderBox && savedReminder) {
+    reminderBox.textContent = savedReminder;
+  }
+
+  const docsBlock = document.getElementById("plannerDocuments");
+  if (docsBlock) {
+    docsBlock.style.display = docsVisibility === "hidden" ? "none" : "block";
+  }
+}
+
 taskForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.getElementById('taskTitle').value.trim();
