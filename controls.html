@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interface controls and interface controls for the Erasmus Semester Planner." />
+  <title>Erasmus Semester Planner | Controls</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-requires-auth="true">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="home.html">
+        <span class="brand-mark">✈</span>
+        <span>Erasmus Semester Planner</span>
+      </a>
+      <button class="mobile-nav-toggle" type="button" data-menu-toggle>☰ Menu</button>
+      <nav>
+        <ul class="nav-list" data-nav-list>
+          <li><a href="home.html">🏠 Home</a></li>
+          <li><a href="dashboard.html">📋 Planner</a></li>
+          <li><a href="profile.html">👤 Profile</a></li>
+          <li><a href="details.html">🧭 Guide</a></li>
+          <li><a class="active" href="controls.html">⚙ Controls</a></li>
+          <li><button class="nav-logout" type="button" data-logout>Logout</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container page-shell roomy-shell">
+        <div class="section-header">
+          <div>
+            <h1>Interface controls</h1>
+            <p class="section-intro">Customize the visual style of the planner and control how task and document sections are displayed.</p>
+          </div>
+        </div>
+
+        <div class="split-layout workspace-layout">
+          <article class="card workspace-main-card">
+            <h2>Interface controls</h2>
+            <p class="section-intro">These controls update the website instantly and stay saved in your browser while you use the prototype.</p>
+
+            <div class="workspace-controls-grid">
+              <div class="card inner-card control-card">
+                <label class="switch-row" for="themeToggle">
+                  <span>Dark mode</span>
+                  <input type="checkbox" id="themeToggle" />
+                </label>
+                <p class="meta">Switch the whole planner between light and dark interface styles.</p>
+              </div>
+
+              <div class="card inner-card control-card slider-card">
+                <label for="fontSlider">Text size</label>
+                <input type="range" id="fontSlider" min="15" max="20" value="16" />
+                <div class="meta" id="fontValue">16px</div>
+                <p class="meta">Use the slider to make the whole website text a little smaller or larger.</p>
+              </div>
+
+              <div class="card inner-card control-card">
+                <label for="statusFilter">Task filter</label>
+                <select id="statusFilter">
+                  <option value="all">Show all</option>
+                  <option value="pending">Pending only</option>
+                  <option value="completed">Completed only</option>
+                </select>
+                <p class="meta">The filter applies to the task list when you open the planner page.</p>
+              </div>
+
+              <div class="card inner-card control-card">
+                <label for="colorPicker">Accent color</label>
+                <input type="color" id="colorPicker" value="#2f6fed" />
+                <p class="meta">Choose the main action color used in buttons, highlights and labels.</p>
+              </div>
+            </div>
+
+            <div class="button-row top-gap">
+              <button id="messageBtn" type="button">Change dashboard reminder</button>
+              <button id="toggleDocsBtn" class="secondary" type="button">Show / hide planner documents</button>
+            </div>
+            <div class="helper-box">The reminder button updates the message shown in the semester dashboard. The documents button controls the document area on the planner page.</div>
+          </article>
+
+          <aside class="card workspace-side-card">
+            <h2>Controls guide</h2>
+            <ul class="checklist-list compact-list">
+              <li>Change the text size here, then return to the planner to see the result.</li>
+              <li>Use the task filter before opening your task list for a cleaner view.</li>
+              <li>Accent color and dark mode stay active across all pages.</li>
+              <li>Profile data stays separate on the Profile page.</li>
+            </ul>
+            <div class="resource-list">
+              <a href="dashboard.html">Back to planner</a>
+              <a href="profile.html">Open profile</a>
+              <a href="home.html">Open website home</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <p class="small-note">Interface controls page of the Erasmus Semester Planner prototype.</p>
+      <div class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Planner</a>
+        <a href="profile.html">Profile</a>
+        <a href="details.html">Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
