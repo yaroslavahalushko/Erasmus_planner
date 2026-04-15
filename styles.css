@@ -293,6 +293,30 @@ input:focus, select:focus, textarea:focus {
   border-radius: 999px;
   border: 1px solid var(--line);
 }
+
+.note-form {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0 12px;
+}
+
+.note-form input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 1px solid #cfd8e6;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.note-form button {
+  border: none;
+  background: #2f6fed;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
 .stat-card {
   padding: 1.25rem;
   border-radius: 20px;
