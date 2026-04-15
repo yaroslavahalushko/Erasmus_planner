@@ -3,66 +3,240 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Login or register to enter the Erasmus Semester Planner prototype." />
-  <title>Erasmus Semester Planner | Login</title>
+  <meta name="description" content="Erasmus Semester Planner for VDU Students - responsive frontend prototype" />
+  <title>Erasmus Semester Planner</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="auth-page">
-  <main class="auth-screen">
-    <section class="auth-hero-panel">
-      <span class="eyebrow">VDU Erasmus planner</span>
-      <h1>Plan your exchange semester from one clear workspace.</h1>
-      <p>
-        This prototype helps students organize their destination, deadlines, tasks, documents and preparation notes before departure.
-      </p>
-      <ul class="checklist-list auth-benefits">
-        <li>Preview your semester dashboard and planning progress</li>
-        <li>Add tasks and file names without reloading the page</li>
-        <li>Use a responsive interface on desktop and mobile</li>
-      </ul>
-      <figure class="card auth-visual-card">
-        <img src="login-register.svg" alt="Login and registration illustration for Erasmus planner" />
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#hero">Erasmus Semester Planner</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="details.html">Student Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container grid-2" id="hero">
+      <article>
+        <p class="eyebrow">Your exchange semester, organized</p>
+        <h1>Plan deadlines, documents and tasks in one place</h1>
+        <p>
+          Erasmus Semester Planner is a web app concept for VDU students who want a clear and simple way to prepare for their exchange semester.
+          Instead of switching between emails, notes, university pages and spreadsheets, students can use one dashboard to track what has to be done before departure.
+        </p>
+        <p>
+          The planner helps students prepare documents, follow important deadlines, manage personal tasks, and keep all exchange information in a structured timeline.
+          It is designed for fast everyday use on both desktop and mobile devices.
+        </p>
+        <div class="cta-row">
+          <a class="button primary" href="#dashboard">Open dashboard view</a>
+          <a class="button secondary" href="#checklist">See checklist</a>
+        </div>
+      </article>
+      <figure class="hero-card card">
+        <img src="assets/images/planner-dashboard.svg" alt="Dashboard illustration for Erasmus Semester Planner" />
+        <figcaption>A single place for tasks, reminders, files and semester details.</figcaption>
       </figure>
     </section>
 
-    <section class="card auth-form-panel">
-      <div class="brand auth-brand">
-        <span class="brand-mark">✈</span>
-        <span>Erasmus Semester Planner</span>
+    <section class="container" id="features">
+      <h2>Main features</h2>
+      <div class="card-grid">
+        <article class="card feature-card">
+          <h3>Personal Dashboard</h3>
+          <p>See upcoming deadlines, open tasks, uploaded files and the latest exchange reminders on one screen.</p>
+        </article>
+        <article class="card feature-card">
+          <h3>Task Planner</h3>
+          <p>Create tasks, set deadlines, mark them as completed and filter them by progress.</p>
+        </article>
+        <article class="card feature-card">
+          <h3>Document Storage</h3>
+          <p>Keep Learning Agreement, insurance, passport copy and other important files together.</p>
+        </article>
+        <article class="card feature-card">
+          <h3>Student Support</h3>
+          <p>Read preparation tips, checklist items and important announcements before your semester starts.</p>
+        </article>
       </div>
-      <h2>Login or create account</h2>
-      <p class="section-intro">Sign in first to open the full website and planner sections.</p>
+    </section>
 
-      <div class="tab-row" role="tablist" aria-label="Authentication tabs">
-        <button class="tab-button active" id="showLogin" type="button">Login</button>
-        <button class="tab-button" id="showRegister" type="button">Register</button>
+    <section class="container grid-2" id="dashboard">
+      <article class="card dashboard-panel">
+        <h2>Semester dashboard</h2>
+        <div class="stats">
+          <div class="stat-box">
+            <span class="stat-number" id="taskCount">5</span>
+            <span class="stat-label">Open tasks</span>
+          </div>
+          <div class="stat-box accent-green">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Uploaded files</span>
+          </div>
+          <div class="stat-box accent-orange">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Days left</span>
+          </div>
+        </div>
+
+        <div class="two-columns">
+          <div>
+            <h3>Upcoming tasks</h3>
+            <ul class="check-list" id="taskList">
+              <li data-status="pending"><strong>Submit Erasmus application</strong> — 2026-05-01</li>
+              <li data-status="pending"><strong>Complete Learning Agreement</strong> — 2026-05-05</li>
+              <li data-status="completed"><strong>Upload passport copy</strong> — completed</li>
+              <li data-status="pending"><strong>Arrange health insurance</strong> — 2026-05-10</li>
+              <li data-status="completed"><strong>Meet Erasmus coordinator</strong> — completed</li>
+            </ul>
+          </div>
+          <aside>
+            <h3>Latest reminder</h3>
+            <p id="announcementText">Start collecting signatures for your Learning Agreement early so you do not delay the approval process.</p>
+            <table>
+              <caption>Current semester plan</caption>
+              <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Destination</td><td>Spain</td></tr>
+                <tr><td>Semester</td><td>Fall 2026</td></tr>
+                <tr><td>Status</td><td>In preparation</td></tr>
+              </tbody>
+            </table>
+          </aside>
+        </div>
+      </article>
+
+      <aside class="card controls-panel" id="controls">
+        <h2>Page controls</h2>
+        <p>Try the interactive controls below to customize the interface and preview how dynamic actions work without reloading the page.</p>
+
+        <div class="control-group">
+          <label class="switch-row">
+            <span>Dark mode</span>
+            <input type="checkbox" id="themeToggle" />
+          </label>
+        </div>
+
+        <div class="control-group">
+          <label for="fontSlider">Text size</label>
+          <input type="range" id="fontSlider" min="15" max="20" value="16" />
+          <span id="fontValue">16px</span>
+        </div>
+
+        <div class="control-group">
+          <label for="statusFilter">Task filter</label>
+          <select id="statusFilter">
+            <option value="all">Show all</option>
+            <option value="pending">Pending only</option>
+            <option value="completed">Completed only</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="colorPicker">Accent color</label>
+          <input type="color" id="colorPicker" value="#2f6fed" />
+        </div>
+
+        <div class="control-group buttons-stack">
+          <button id="messageBtn">Change reminder</button>
+          <button id="toggleDocsBtn">Show / hide documents</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container" id="checklist">
+      <h2>Preparation checklist</h2>
+      <div class="card checklist-card">
+        <ol>
+          <li>Create your semester plan and add your destination details.</li>
+          <li>Check the application deadline and prepare required forms.</li>
+          <li>Upload key documents such as Learning Agreement and insurance confirmation.</li>
+          <li>Add tasks for accommodation, tickets, banking and travel planning.</li>
+          <li>Review reminders regularly so no important step is missed before departure.</li>
+        </ol>
       </div>
+    </section>
 
-      <form id="loginForm" class="simple-form">
-        <label for="loginEmail">Email</label>
-        <input id="loginEmail" type="email" value="yaroslava.halushko@vdu.lt" required />
-        <label for="loginPassword">Password</label>
-        <input id="loginPassword" type="password" value="password123" required />
-        <button type="submit">Enter planner</button>
-      </form>
+    <section class="container grid-2" id="docs-and-admin">
+      <article class="card" id="documentsBlock">
+        <h2>Documents</h2>
+        <p>Store important exchange files in one place and keep track of what has already been prepared.</p>
+        <form class="simple-form">
+          <label for="docName">Document name</label>
+          <input id="docName" type="text" placeholder="Learning Agreement" />
+          <label for="docType">Document type</label>
+          <select id="docType">
+            <option>PDF</option>
+            <option>Image</option>
+            <option>Form</option>
+          </select>
+          <button type="button">Upload mock file</button>
+        </form>
+      </article>
 
-      <form id="registerForm" class="simple-form hidden">
-        <label for="registerName">Full name</label>
-        <input id="registerName" type="text" placeholder="Yaroslava Halushko" required />
-        <label for="registerEmail">Email</label>
-        <input id="registerEmail" type="email" placeholder="student@vdu.lt" required />
-        <label for="registerCountry">Destination country</label>
-        <input id="registerCountry" type="text" placeholder="Spain" required />
-        <label for="registerSemester">Semester</label>
-        <input id="registerSemester" type="text" placeholder="Fall 2026" required />
-        <label for="registerPassword">Password</label>
-        <input id="registerPassword" type="password" placeholder="Create password" required />
-        <button type="submit">Create account and continue</button>
-      </form>
+      <article class="card">
+        <h2>Helpful information</h2>
+        <p>Students often lose time because exchange planning is spread across many sources. This planner brings the most important information into a simple and guided workflow.</p>
+        <blockquote>
+          Keep your semester plan updated every week and review pending tasks before each deadline.
+        </blockquote>
+      </article>
+    </section>
 
-      <p class="auth-status" id="authStatus">This prototype stores profile data only in your browser and opens the website after login.</p>
+    <section class="container" id="gallery">
+      <h2>Planner gallery</h2>
+      <p>Preview the main sections of the Erasmus planner. Click any visual to open a larger view.</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item card"><img src="assets/images/planner-dashboard.svg" alt="Planner dashboard visual" /><figcaption>Dashboard overview</figcaption></figure>
+        <figure class="gallery-item card"><img src="assets/images/task-board.svg" alt="Task board visual" /><figcaption>Task board</figcaption></figure>
+        <figure class="gallery-item card"><img src="assets/images/document-vault.svg" alt="Document vault visual" /><figcaption>Document storage</figcaption></figure>
+        <figure class="gallery-item card"><img src="assets/images/admin-panel.svg" alt="Admin panel visual" /><figcaption>Updates and notices</figcaption></figure>
+        <figure class="gallery-item card"><img src="assets/images/mobile-view.svg" alt="Mobile responsive visual" /><figcaption>Responsive mobile view</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="container" id="videos">
+      <h2>Prototype demo videos</h2>
+      <div class="video-grid">
+        <article class="card">
+          <h3>Video 1: Dashboard preview</h3>
+          <video controls preload="metadata">
+            <source src="assets/videos/demo-dashboard.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+        <article class="card">
+          <h3>Video 2: Interactive controls</h3>
+          <video controls preload="metadata">
+            <source src="assets/videos/demo-task-controls.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>Erasmus Semester Planner prototype for VDU students.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <dialog id="lightbox">
+    <img id="lightboxImage" alt="Expanded preview" />
+    <button id="closeLightbox">Close</button>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
