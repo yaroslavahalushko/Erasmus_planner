@@ -66,14 +66,36 @@
               <section class="card inner-card">
                 <h3>Upcoming tasks</h3>
                 <ul class="task-list" id="taskPreviewList">
-                  <li><div class="task-row"><div><div class="task-title">Submit Erasmus application</div><div class="task-meta">2026-05-01</div></div></div></li>
-                  <li><div class="task-row"><div><div class="task-title">Complete Learning Agreement</div><div class="task-meta">2026-05-05</div></div></div></li>
-                  <li><div class="task-row"><div><div class="task-title">Arrange health insurance</div><div class="task-meta">2026-05-10</div></div></div></li>
+                  <li>
+                    <div class="task-row">
+                      <div>
+                        <div class="task-title">Submit Erasmus application</div>
+                        <div class="task-meta">2026-05-01</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="task-row">
+                      <div>
+                        <div class="task-title">Complete Learning Agreement</div>
+                        <div class="task-meta">2026-05-05</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="task-row">
+                      <div>
+                        <div class="task-title">Arrange health insurance</div>
+                        <div class="task-meta">2026-05-10</div>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
               </section>
+
               <section class="card inner-card">
                 <h3>Current semester plan</h3>
-                <p id="announcementText">Remember to check whether all selected courses match your home university requirements before approval.</p>
+                <p id="latestReminder">Remember to check whether all selected courses match your home university requirements before approval.</p>
                 <div class="table-wrap">
                   <table>
                     <tbody>
@@ -97,7 +119,7 @@
               <a href="details.html">Read the preparation guide</a>
               <a href="controls.html">Open interface controls</a>
             </div>
-            <div class="helper-box">Controls settings now have their own page, so the semester dashboard has more room for planning content.</div>
+            <div class="helper-box">Use the Controls page to change the dashboard reminder and show or hide the documents section.</div>
           </aside>
         </div>
       </div>
@@ -110,27 +132,30 @@
             <div class="section-header">
               <div>
                 <h2>Task manager</h2>
-            <p class="section-intro">Build your checklist, update status and keep the dashboard synchronized automatically.</p>
-                <p class="section-intro">Add Erasmus preparation tasks and control their status dynamically.</p>
+                <p class="section-intro">Build your checklist, update status and keep the dashboard synchronized automatically.</p>
               </div>
             </div>
+
             <form id="taskForm" class="task-form">
               <label for="taskTitle">Task title</label>
               <input id="taskTitle" type="text" placeholder="Book accommodation" required />
+
               <label for="taskDeadline">Deadline</label>
               <input id="taskDeadline" type="date" required />
+
               <label for="taskStatus">Status</label>
               <select id="taskStatus">
                 <option value="pending">Pending</option>
                 <option value="completed">Completed</option>
               </select>
+
               <button type="submit">Add task</button>
             </form>
           </article>
 
           <article class="card">
             <h2>My tasks</h2>
-            <p class="section-intro">Use the workspace page to filter tasks or adjust the visual settings of the site.</p>
+            <p class="section-intro">Use the controls page to adjust reminder text or other interface settings.</p>
             <ul class="task-list" id="taskList">
               <li data-status="pending">
                 <div class="task-row">
@@ -144,6 +169,7 @@
                   </div>
                 </div>
               </li>
+
               <li data-status="pending">
                 <div class="task-row">
                   <div>
@@ -156,6 +182,7 @@
                   </div>
                 </div>
               </li>
+
               <li data-status="completed" class="done">
                 <div class="task-row">
                   <div>
@@ -176,17 +203,18 @@
           <article class="card">
             <h2>Document center</h2>
             <p class="section-intro">Store visible document entries for agreements, insurance and travel papers.</p>
-            <p class="section-intro">Add file names to simulate uploaded documents in the planner.</p>
             <form id="documentForm" class="document-form">
               <label for="documentTitle">Document label</label>
               <input id="documentTitle" type="text" placeholder="Learning Agreement" required />
+
               <label for="documentFile">Choose file</label>
               <input id="documentFile" type="file" />
+
               <button type="submit">Add document to list</button>
             </form>
           </article>
 
-          <article class="card" id="documentsBlock">
+          <article class="card" id="plannerDocuments">
             <h2>Stored file list</h2>
             <ul class="document-list" id="documentList">
               <li>
