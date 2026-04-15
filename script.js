@@ -193,6 +193,30 @@ function applyFilter() {
   });
 }
 
+function deleteNote(button) {
+  const noteItem = button.parentElement;
+  noteItem.remove();
+}
+
+function addNote() {
+  const input = document.getElementById("newNoteInput");
+  const notesList = document.getElementById("notesList");
+  const text = input.value.trim();
+
+  if (!text) return;
+
+  const noteItem = document.createElement("div");
+  noteItem.className = "note-item";
+
+  noteItem.innerHTML = `
+    <span>${text}</span>
+    <button class="note-delete" onclick="deleteNote(this)">Delete</button>
+  `;
+
+  notesList.appendChild(noteItem);
+  input.value = "";
+}
+
 taskForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const title = document.getElementById('taskTitle').value.trim();
