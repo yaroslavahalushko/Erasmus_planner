@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <rect width="800" height="560" rx="32" fill="#f4f7fb"/>
+  <rect x="40" y="40" width="720" height="480" rx="28" fill="#ffffff" stroke="#d7e0ef" stroke-width="4"/>
+  <rect x="80" y="86" width="220" height="40" rx="12" fill="#edf3ff"/>
+  <rect x="80" y="156" width="180" height="110" rx="20" fill="#edf3ff"/>
+  <rect x="280" y="156" width="180" height="110" rx="20" fill="#ebfaf2"/>
+  <rect x="480" y="156" width="180" height="110" rx="20" fill="#fff3e8"/>
+  <rect x="80" y="300" width="280" height="170" rx="20" fill="#f8fbff" stroke="#d7e0ef"/>
+  <rect x="390" y="300" width="270" height="170" rx="20" fill="#f8fbff" stroke="#d7e0ef"/>
+  <text x="92" y="114" font-family="Arial" font-size="28" font-weight="700" fill="#1e2940">Semester dashboard</text>
+  <text x="110" y="210" font-family="Arial" font-size="48" font-weight="700" fill="#1e2940">3</text>
+  <text x="110" y="245" font-family="Arial" font-size="24" fill="#60708a">Open tasks</text>
+  <text x="310" y="210" font-family="Arial" font-size="48" font-weight="700" fill="#1e2940">2</text>
+  <text x="310" y="245" font-family="Arial" font-size="24" fill="#60708a">Uploaded files</text>
+  <text x="510" y="210" font-family="Arial" font-size="48" font-weight="700" fill="#1e2940">12</text>
+  <text x="510" y="245" font-family="Arial" font-size="24" fill="#60708a">Days left</text>
+  <text x="100" y="340" font-family="Arial" font-size="24" font-weight="700" fill="#1e2940">Upcoming tasks</text>
+  <text x="100" y="380" font-family="Arial" font-size="20" fill="#1e2940">• Submit application</text>
+  <text x="100" y="415" font-family="Arial" font-size="20" fill="#1e2940">• Learning Agreement</text>
+  <text x="100" y="450" font-family="Arial" font-size="20" fill="#1e2940">• Insurance</text>
+  <text x="410" y="340" font-family="Arial" font-size="24" font-weight="700" fill="#1e2940">Planner summary</text>
+  <text x="410" y="382" font-family="Arial" font-size="20" fill="#1e2940">Destination: Spain</text>
+  <text x="410" y="417" font-family="Arial" font-size="20" fill="#1e2940">Semester: Fall 2026</text>
+  <text x="410" y="452" font-family="Arial" font-size="20" fill="#1e2940">Status: In preparation</text>
+</svg>

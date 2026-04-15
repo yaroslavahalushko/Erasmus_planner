@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <rect width="800" height="560" rx="32" fill="#f4f7fb"/>
+  <rect x="52" y="56" width="696" height="448" rx="28" fill="#ffffff" stroke="#d7e0ef" stroke-width="4"/>
+  <rect x="94" y="114" width="250" height="280" rx="20" fill="#f8fbff" stroke="#d7e0ef"/>
+  <rect x="380" y="114" width="328" height="280" rx="20" fill="#f8fbff" stroke="#d7e0ef"/>
+  <rect x="120" y="170" width="198" height="38" rx="12" fill="#ffffff" stroke="#d7e0ef"/>
+  <rect x="120" y="232" width="198" height="38" rx="12" fill="#ffffff" stroke="#d7e0ef"/>
+  <rect x="120" y="300" width="156" height="42" rx="14" fill="#2f6fed"/>
+  <text x="116" y="150" font-family="Arial" font-size="24" font-weight="700" fill="#1e2940">Documents</text>
+  <text x="126" y="194" font-family="Arial" font-size="18" fill="#60708a">Document label</text>
+  <text x="126" y="256" font-family="Arial" font-size="18" fill="#60708a">Select file</text>
+  <text x="150" y="328" font-family="Arial" font-size="20" font-weight="700" fill="#ffffff">Add to list</text>
+  <text x="406" y="154" font-family="Arial" font-size="24" font-weight="700" fill="#1e2940">Stored files</text>
+  <text x="406" y="208" font-family="Arial" font-size="20" fill="#1e2940">Learning Agreement.pdf</text>
+  <text x="406" y="248" font-family="Arial" font-size="20" fill="#1e2940">Insurance-confirmation.pdf</text>
+  <text x="406" y="288" font-family="Arial" font-size="20" fill="#1e2940">Passport-copy.pdf</text>
+</svg>

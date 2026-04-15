@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frontend prototype of an Erasmus Semester Planner for VDU students." />
+  <title>Erasmus Semester Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#hero">Erasmus Semester Planner</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#auth">Login</a></li>
+          <li><a href="#planner">Planner</a></li>
+          <li><a href="#tasks">Tasks</a></li>
+          <li><a href="#documents">Documents</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="details.html">Student guide</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container grid-2" id="hero">
+      <article>
+        <p class="eyebrow">LAB3 prototype</p>
+        <h1>Organize your Erasmus semester in one place</h1>
+        <p>
+          Erasmus Semester Planner helps VDU students prepare for exchange studies with one clear workflow:
+          create a profile, set up the semester plan, manage tasks, store important documents and follow deadlines.
+        </p>
+        <p>
+          The prototype below focuses on the main student journey and shows how the interface could work before the backend is connected.
+        </p>
+        <div class="cta-row">
+          <a class="button primary" href="#auth">Start with login</a>
+          <a class="button secondary" href="#tasks">Open task board</a>
+        </div>
+      </article>
+      <figure class="card hero-card">
+        <img src="planner-hero.svg" alt="Illustration of Erasmus planner dashboard" />
+        <figcaption>One dashboard for profile, deadlines, documents and semester preparation.</figcaption>
+      </figure>
+    </section>
+
+    <section class="container" id="auth">
+      <div class="section-head">
+        <h2>Registration and login</h2>
+        <p>Switch between account creation and sign in. This is a frontend prototype of the user entry flow.</p>
+      </div>
+      <div class="grid-2 auth-layout">
+        <article class="card auth-card">
+          <div class="tab-row" role="tablist" aria-label="Authentication tabs">
+            <button class="tab-button active" id="showLogin" type="button">Login</button>
+            <button class="tab-button" id="showRegister" type="button">Register</button>
+          </div>
+
+          <form id="loginForm" class="simple-form">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" placeholder="student@vdu.lt" required />
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" placeholder="Enter password" required />
+            <button type="submit">Open dashboard</button>
+          </form>
+
+          <form id="registerForm" class="simple-form hidden">
+            <label for="registerName">Full name</label>
+            <input id="registerName" type="text" placeholder="Yaroslava Halushko" required />
+            <label for="registerEmail">Email</label>
+            <input id="registerEmail" type="email" placeholder="student@vdu.lt" required />
+            <label for="registerCountry">Destination country</label>
+            <input id="registerCountry" type="text" placeholder="Spain" required />
+            <label for="registerPassword">Password</label>
+            <input id="registerPassword" type="password" placeholder="Create password" required />
+            <button type="submit">Create profile</button>
+          </form>
+        </article>
+
+        <aside class="card profile-card">
+          <h3>Profile preview</h3>
+          <div class="profile-grid">
+            <p><strong>Name:</strong> <span id="profileName">Guest student</span></p>
+            <p><strong>Email:</strong> <span id="profileEmail">student@vdu.lt</span></p>
+            <p><strong>Destination:</strong> <span id="profileCountry">Spain</span></p>
+            <p><strong>Semester:</strong> <span id="profileSemester">Fall 2026</span></p>
+          </div>
+          <form id="profileForm" class="simple-form profile-form">
+            <label for="profileSemesterInput">Update semester</label>
+            <input id="profileSemesterInput" type="text" placeholder="Fall 2026" />
+            <label for="profileNotes">Profile notes</label>
+            <textarea id="profileNotes" rows="4" placeholder="Need visa guidance, insurance confirmation, and course approval."></textarea>
+            <button type="submit">Save profile changes</button>
+          </form>
+          <p class="status-badge" id="profileStatus">Profile is ready for planning.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container grid-2" id="planner">
+      <article class="card dashboard-panel">
+        <h2>Semester dashboard</h2>
+        <div class="stats">
+          <div class="stat-box">
+            <span class="stat-number" id="openTaskCount">3</span>
+            <span class="stat-label">Open tasks</span>
+          </div>
+          <div class="stat-box accent-green">
+            <span class="stat-number" id="docCount">2</span>
+            <span class="stat-label">Uploaded files</span>
+          </div>
+          <div class="stat-box accent-orange">
+            <span class="stat-number" id="daysLeft">12</span>
+            <span class="stat-label">Days left</span>
+          </div>
+        </div>
+
+        <div class="two-columns">
+          <div>
+            <h3>Upcoming tasks</h3>
+            <ul class="task-list compact" id="taskPreviewList">
+              <li><span>Submit Erasmus application</span><small>2026-05-01</small></li>
+              <li><span>Complete Learning Agreement</span><small>2026-05-05</small></li>
+              <li><span>Arrange health insurance</span><small>2026-05-10</small></li>
+            </ul>
+          </div>
+          <aside>
+            <h3>Latest reminder</h3>
+            <p id="announcementText">Check that your Learning Agreement includes all selected courses before sending it for signatures.</p>
+            <table>
+              <caption>Current semester plan</caption>
+              <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Destination</td><td id="summaryCountry">Spain</td></tr>
+                <tr><td>Semester</td><td id="summarySemester">Fall 2026</td></tr>
+                <tr><td>Status</td><td>In preparation</td></tr>
+              </tbody>
+            </table>
+          </aside>
+        </div>
+      </article>
+
+      <aside class="card controls-panel" id="controls">
+        <h2>Page controls</h2>
+        <p>Try the interactive controls below to customize the interface and preview how dynamic actions work without reloading the page.</p>
+
+        <div class="control-group">
+          <label class="switch-row">
+            <span>Dark mode</span>
+            <input type="checkbox" id="themeToggle" />
+          </label>
+        </div>
+
+        <div class="control-group">
+          <label for="fontSlider">Text size</label>
+          <input type="range" id="fontSlider" min="15" max="20" value="16" />
+          <span id="fontValue">16px</span>
+        </div>
+
+        <div class="control-group">
+          <label for="statusFilter">Task filter</label>
+          <select id="statusFilter">
+            <option value="all">Show all</option>
+            <option value="pending">Pending only</option>
+            <option value="completed">Completed only</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="colorPicker">Accent color</label>
+          <input type="color" id="colorPicker" value="#2f6fed" />
+        </div>
+
+        <div class="buttons-stack">
+          <button id="messageBtn" type="button">Change reminder</button>
+          <button id="toggleDocsBtn" type="button">Show / hide documents</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container" id="tasks">
+      <div class="section-head">
+        <h2>Task manager</h2>
+        <p>Add Erasmus preparation tasks, mark them as completed and remove tasks you no longer need.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <form id="taskForm" class="task-form">
+            <label for="taskTitle">Task title</label>
+            <input id="taskTitle" type="text" placeholder="Book accommodation" required />
+            <label for="taskDeadline">Deadline</label>
+            <input id="taskDeadline" type="date" required />
+            <label for="taskStatus">Status</label>
+            <select id="taskStatus">
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
+            </select>
+            <button type="submit">Add task</button>
+          </form>
+        </article>
+        <article class="card">
+          <h3>My tasks</h3>
+          <ul class="task-list" id="taskList">
+            <li data-status="pending"><span>Submit Erasmus application</span><small>2026-05-01</small><div class="task-actions"><button type="button" class="small-btn complete-btn">Complete</button><button type="button" class="small-btn danger-btn delete-btn">Delete</button></div></li>
+            <li data-status="pending"><span>Complete Learning Agreement</span><small>2026-05-05</small><div class="task-actions"><button type="button" class="small-btn complete-btn">Complete</button><button type="button" class="small-btn danger-btn delete-btn">Delete</button></div></li>
+            <li data-status="completed" class="done"><span>Upload passport copy</span><small>Completed</small><div class="task-actions"><button type="button" class="small-btn complete-btn">Undo</button><button type="button" class="small-btn danger-btn delete-btn">Delete</button></div></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="container grid-2" id="documents-section">
+      <article class="card" id="documentsBlock">
+        <h2 id="documents">Documents</h2>
+        <p>Keep file names visible in one place while you prepare your Erasmus documents.</p>
+        <form id="documentForm" class="simple-form">
+          <label for="documentTitle">Document label</label>
+          <input id="documentTitle" type="text" placeholder="Learning Agreement" required />
+          <label for="documentFile">Select file</label>
+          <input id="documentFile" type="file" />
+          <button type="submit">Add to list</button>
+        </form>
+        <ul class="document-list" id="documentList">
+          <li><strong>Learning Agreement.pdf</strong> <span>Added to planner</span></li>
+          <li><strong>Insurance-confirmation.pdf</strong> <span>Added to planner</span></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Preparation checklist</h2>
+        <ol class="checklist-list">
+          <li>Register and review your profile information.</li>
+          <li>Create a semester plan with destination and travel period.</li>
+          <li>Add important deadlines and course approval tasks.</li>
+          <li>Upload passport, insurance and agreement documents.</li>
+          <li>Check administrator notices before each deadline.</li>
+        </ol>
+        <details class="admin-note">
+          <summary>Administrator notice</summary>
+          <p>Course changes should be confirmed with the faculty coordinator before the final Learning Agreement is signed.</p>
+        </details>
+      </article>
+    </section>
+
+    <section class="container" id="gallery">
+      <div class="section-head">
+        <h2>Planner gallery</h2>
+        <p>Preview the main sections of the Erasmus planner. Click any visual to open a larger view.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item card"><img src="planner-hero.svg" alt="Dashboard overview" /><figcaption>Dashboard overview</figcaption></figure>
+        <figure class="gallery-item card"><img src="login-register.svg" alt="Login and registration screen" /><figcaption>Login and registration</figcaption></figure>
+        <figure class="gallery-item card"><img src="task-manager.svg" alt="Task manager screen" /><figcaption>Task manager</figcaption></figure>
+        <figure class="gallery-item card"><img src="document-center.svg" alt="Document storage screen" /><figcaption>Document storage</figcaption></figure>
+        <figure class="gallery-item card"><img src="mobile-view.svg" alt="Responsive mobile layout" /><figcaption>Responsive mobile view</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="container" id="videos">
+      <h2>Prototype demo videos</h2>
+      <div class="video-grid">
+        <article class="card">
+          <h3>Video 1: Dashboard preview</h3>
+          <video controls preload="metadata">
+            <source src="demo-dashboard.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+        <article class="card">
+          <h3>Video 2: Interactive controls</h3>
+          <video controls preload="metadata">
+            <source src="demo-task-controls.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>Erasmus Semester Planner prototype for LAB3.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <dialog id="lightbox">
+    <img id="lightboxImage" alt="Expanded preview" />
+    <button id="closeLightbox" type="button">Close</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

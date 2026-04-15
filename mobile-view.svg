@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <rect width="800" height="560" rx="32" fill="#f4f7fb"/>
+  <rect x="290" y="56" width="220" height="448" rx="34" fill="#ffffff" stroke="#d7e0ef" stroke-width="4"/>
+  <rect x="320" y="102" width="160" height="34" rx="12" fill="#edf3ff"/>
+  <rect x="320" y="160" width="160" height="72" rx="18" fill="#edf3ff"/>
+  <rect x="320" y="250" width="160" height="72" rx="18" fill="#ebfaf2"/>
+  <rect x="320" y="340" width="160" height="104" rx="18" fill="#f8fbff" stroke="#d7e0ef"/>
+  <text x="338" y="126" font-family="Arial" font-size="20" font-weight="700" fill="#1e2940">Mobile view</text>
+  <text x="338" y="192" font-family="Arial" font-size="16" fill="#1e2940">Open tasks</text>
+  <text x="338" y="282" font-family="Arial" font-size="16" fill="#1e2940">Documents</text>
+  <text x="338" y="376" font-family="Arial" font-size="16" fill="#1e2940">Upcoming</text>
+  <text x="338" y="406" font-family="Arial" font-size="16" fill="#1e2940">• Application</text>
+  <text x="338" y="430" font-family="Arial" font-size="16" fill="#1e2940">• Insurance</text>
+</svg>
