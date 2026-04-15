@@ -55,17 +55,21 @@
             <div class="helper-box">Use this page to update the profile instead of keeping it inside the planner dashboard.</div>
           </article>
 
-          <aside class="card">
+          <div class="profile-card">
             <h2>Planning notes</h2>
-            <p id="profileNotesPreview">Need host university course approval and accommodation search.</p>
-            <ul class="checklist-list compact-list">
-              <li>Destination university confirmed</li>
-              <li>Semester dates checked</li>
-              <li>Insurance period to verify</li>
-              <li>Travel booking not started yet</li>
-            </ul>
-          </aside>
-        </div>
+            
+            <div class="note-form">
+              <input type="text" id="newNoteInput" placeholder="Write a new note" />
+              <button onclick="addNote()">Add note</button>
+            </div>
+            
+            <div id="notesList" class="notes-list">
+              <div class="note-item">
+                <span>Destination university confirmed</span>
+                <button class="note-delete" onclick="deleteNote(this)">Delete</button>
+              </div>
+            </div>
+          </div>
 
         <div class="split-layout profile-layout-wide">
           <article class="card">
