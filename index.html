@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Erasmus Semester Planner for VDU Students - LAB3 frontend MVP" />
+  <title>Erasmus Semester Planner | LAB3</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#hero">Erasmus Semester Planner</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#controls">Controls</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="details.html">Details Page</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container grid-2" id="hero">
+      <article>
+        <p class="eyebrow">LD3 MVP GUI based on LD2</p>
+        <h1>Plan your Erasmus semester in one place</h1>
+        <p>
+          This frontend prototype is based on the LD2 project “Erasmus Semester Planner for VDU Students”,
+          where the main goal is to centralize tasks, documents, deadlines and guidance for exchange students.
+          The page demonstrates the MVP screens and interactions a student would use before leaving for Erasmus.
+        </p>
+        <p>
+          According to the LD2 specification, the MVP should support registration, profile editing, semester plan creation,
+          task management, document storage, a predefined checklist, dashboard reminders, and administrator announcements. Those
+          core parts are reflected in the sections below. fileciteturn0file0
+        </p>
+        <div class="cta-row">
+          <a class="button primary" href="#dashboard">See dashboard</a>
+          <a class="button secondary" href="#checklist">Jump to checklist</a>
+        </div>
+      </article>
+      <figure class="hero-card card">
+        <img src="assets/images/planner-dashboard.svg" alt="Dashboard illustration for Erasmus Semester Planner" />
+        <figcaption>Concept dashboard showing deadlines, documents and task progress.</figcaption>
+      </figure>
+    </section>
+
+    <section class="container" id="features">
+      <h2>Main MVP screens</h2>
+      <div class="card-grid">
+        <article class="card feature-card">
+          <h3>Student Dashboard</h3>
+          <p>Shows upcoming deadlines, incomplete tasks, quick statistics and latest Erasmus announcements.</p>
+        </article>
+        <article class="card feature-card">
+          <h3>Task Management</h3>
+          <p>Add, edit, complete and filter tasks such as application, insurance, tickets and accommodation.</p>
+        </article>
+        <article class="card feature-card">
+          <h3>Document Section</h3>
+          <p>Store and review Learning Agreement, insurance files and other preparation documents in one place.</p>
+        </article>
+        <article class="card feature-card">
+          <h3>Administrator Area</h3>
+          <p>Update deadlines and publish guidance so students can always see the latest official information.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container grid-2" id="dashboard">
+      <article class="card dashboard-panel">
+        <h2>Example dashboard</h2>
+        <div class="stats">
+          <div class="stat-box">
+            <span class="stat-number" id="taskCount">5</span>
+            <span class="stat-label">Open tasks</span>
+          </div>
+          <div class="stat-box accent-green">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Uploaded files</span>
+          </div>
+          <div class="stat-box accent-orange">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Days left</span>
+          </div>
+        </div>
+
+        <div class="two-columns">
+          <div>
+            <h3>Upcoming deadlines</h3>
+            <ul class="check-list" id="taskList">
+              <li data-status="pending"><strong>Submit application</strong> — 2026-05-01</li>
+              <li data-status="pending"><strong>Learning Agreement</strong> — 2026-05-05</li>
+              <li data-status="completed"><strong>Upload passport copy</strong> — completed</li>
+              <li data-status="pending"><strong>Arrange insurance</strong> — 2026-05-10</li>
+              <li data-status="completed"><strong>Meet coordinator</strong> — completed</li>
+            </ul>
+          </div>
+          <aside>
+            <h3>Quick announcement</h3>
+            <p id="announcementText">Students should review the Erasmus checklist at least once per week to avoid missing deadlines.</p>
+            <table>
+              <caption>Semester plan summary</caption>
+              <thead>
+                <tr><th>Field</th><th>Value</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Destination</td><td>Spain</td></tr>
+                <tr><td>Semester</td><td>Fall 2026</td></tr>
+                <tr><td>Status</td><td>In preparation</td></tr>
+              </tbody>
+            </table>
+          </aside>
+        </div>
+      </article>
+
+      <aside class="card controls-panel" id="controls">
+        <h2>Interactive controls</h2>
+        <p>These controls change page content without reloading. They demonstrate DOM/BOM manipulation required in LAB3.</p>
+
+        <div class="control-group">
+          <label class="switch-row">
+            <span>Dark mode</span>
+            <input type="checkbox" id="themeToggle" />
+          </label>
+        </div>
+
+        <div class="control-group">
+          <label for="fontSlider">Text size</label>
+          <input type="range" id="fontSlider" min="15" max="20" value="16" />
+          <span id="fontValue">16px</span>
+        </div>
+
+        <div class="control-group">
+          <label for="statusFilter">Task filter</label>
+          <select id="statusFilter">
+            <option value="all">Show all</option>
+            <option value="pending">Pending only</option>
+            <option value="completed">Completed only</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="colorPicker">Accent color</label>
+          <input type="color" id="colorPicker" value="#2f6fed" />
+        </div>
+
+        <div class="control-group buttons-stack">
+          <button id="messageBtn">Change announcement</button>
+          <button id="toggleDocsBtn">Show / hide document block</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container" id="checklist">
+      <h2>Preparation checklist</h2>
+      <div class="card checklist-card">
+        <ol>
+          <li>Register in the system and complete profile information.</li>
+          <li>Create an Erasmus semester plan with destination and dates.</li>
+          <li>Add required tasks with deadlines and statuses.</li>
+          <li>Upload essential documents such as Learning Agreement and insurance.</li>
+          <li>Check announcements and reminders from the administrator.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="container grid-2" id="docs-and-admin">
+      <article class="card" id="documentsBlock">
+        <h2>Documents area</h2>
+        <p>This section represents the MVP area where a student stores important files and sees upload metadata.</p>
+        <form class="simple-form">
+          <label for="docName">Document name</label>
+          <input id="docName" type="text" placeholder="Learning Agreement" />
+          <label for="docType">Document type</label>
+          <select id="docType">
+            <option>PDF</option>
+            <option>Image</option>
+            <option>Form</option>
+          </select>
+          <button type="button">Upload mock file</button>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2>Administrator information panel</h2>
+        <p>In the MVP, an administrator can update deadlines, instructions and general announcements for students. This reflects FR13 and FR14 from LD2. fileciteturn0file0</p>
+        <blockquote>
+          “All Erasmus-related planning tools and data are in one place” is one of the key benefits identified in LD2. fileciteturn0file0
+        </blockquote>
+      </article>
+    </section>
+
+    <section class="container" id="gallery">
+      <h2>Interactive visual gallery</h2>
+      <p>The assignment asks for at least 5 images or visual elements. These cards include hover zoom and can be opened in a lightbox-style preview.</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item card"><img src="assets/images/planner-dashboard.svg" alt="Planner dashboard visual" /><figcaption>Dashboard overview</figcaption></figure>
+        <figure class="gallery-item card"><img src="assets/images/task-board.svg" alt="Task board visual" /><figcaption>Task board</figcaption></figure>
+        <figure class="gallery-item card"><img src="assets/images/document-vault.svg" alt="Document vault visual" /><figcaption>Document vault</figcaption></figure>
+        <figure class="gallery-item card"><img src="assets/images/admin-panel.svg" alt="Admin panel visual" /><figcaption>Admin panel</figcaption></figure>
+        <figure class="gallery-item card"><img src="assets/images/mobile-view.svg" alt="Mobile responsive visual" /><figcaption>Responsive mobile view</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="container" id="videos">
+      <h2>Demo videos</h2>
+      <div class="video-grid">
+        <article class="card">
+          <h3>Video 1: Dashboard walkthrough</h3>
+          <video controls preload="metadata">
+            <source src="assets/videos/demo-dashboard.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+        <article class="card">
+          <h3>Video 2: Task controls walkthrough</h3>
+          <video controls preload="metadata">
+            <source src="assets/videos/demo-task-controls.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>LAB3 frontend prototype for “Erasmus Semester Planner for VDU Students”.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <dialog id="lightbox">
+    <img id="lightboxImage" alt="Expanded preview" />
+    <button id="closeLightbox">Close</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
