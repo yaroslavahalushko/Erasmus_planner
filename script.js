@@ -397,6 +397,9 @@ if (savedTheme === 'dark') {
   document.body.classList.add('dark');
   if (themeToggle) themeToggle.checked = false;
 }
+document.getElementById("themeToggle").addEventListener("change", function() {
+  this.checked = false; // always switch back to light
+});
 
 const savedFontSize = localStorage.getItem(fontKey);
 if (savedFontSize) {
