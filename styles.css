@@ -66,7 +66,7 @@ main { padding-bottom: 4rem; }
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
-body.dark .site-header { background: rgba(15, 23, 42, 0.88); }
+/*body.dark .site-header { background: rgba(15, 23, 42, 0.88); }*/
 .nav-wrap {
   min-height: 78px;
   display: flex;
