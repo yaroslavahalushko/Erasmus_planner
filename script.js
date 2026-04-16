@@ -395,7 +395,7 @@ const colorPicker = document.getElementById('colorPicker');
 const savedTheme = localStorage.getItem(themeKey);
 if (savedTheme === 'dark') {
   document.body.classList.add('dark');
-  if (themeToggle) themeToggle.checked = true;
+  if (themeToggle) themeToggle.checked = false;
 }
 
 const savedFontSize = localStorage.getItem(fontKey);
